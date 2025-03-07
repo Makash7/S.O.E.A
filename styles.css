@@ -1,0 +1,1034 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevents unwanted side scrolling */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F0F0F0;
+}
+
+/* HEADER WRAPPER */
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* Adjust width */
+    margin: 0 auto;
+    height: 120px; /* Adjust the height */
+    margin-bottom: 20px; /* Add margin at the bottom of the header */
+}
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Match the new header height */
+    margin-right: 20px; /* Spacing between logo and header content */
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* HEADER CONTENT */
+.header-content {
+    flex-grow: 1;
+}
+
+/* TOP LINKS */
+.top-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 20px 0; /* Increase padding to match header height */
+}
+
+.left-link {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.right-links {
+    display: flex;
+    gap: 15px;
+}
+
+.right-links span {
+    cursor: pointer;
+}
+
+/* HORIZONTAL LINE */
+hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+/* NAVIGATION */
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background:  #F0F0F0;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    position: relative;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+
+/* Mega Menu Styling */
+.mega-menu {
+    position: fixed; /* Escape container limitations */
+    left: 0;
+    top: 120px; /* Adjust to appear below the header */
+    width: 100vw; /* Span the entire viewport */
+    background:#415f08!important;
+    padding: 40px 60px;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Ensure it stays on top */
+}
+
+/* Ensure it appears when hovering over the menu */
+.mega-menu-parent:hover .mega-menu {
+    display: block;
+}
+.nav-item:hover + #mega-dropdown {
+    display: block;
+}
+
+/* Mega menu layout */
+.mega-menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures all columns & dividers have the same height */
+    flex-wrap: nowrap; /* Prevents items from stacking */
+    min-height: 200px; /* Ensures the divider has enough height */
+}
+
+/* First Column: Description */
+.mega-column.description {
+    flex: 1;
+    max-width: 30%;
+}
+
+.mega-column.description h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mega-column.description p {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+/* CTA button */
+.cta-button {
+    display: inline-block;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Second Column: Links */
+.mega-column.links {
+    flex: 1;
+    max-width: 25%;
+}
+
+.mega-column.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-column.links ul li {
+    margin: 10px 0;
+}
+
+.mega-column.links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.mega-column.links ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Vertical divider */
+.divider {
+    width: 2px;
+    background: rgba(255, 255, 255, 0.7); /* Slight transparency for visibility */
+    height: 100%;
+    min-height: 150px; /* Ensures visibility even if content is small */
+    margin: 0 40px;
+}
+
+/* Fallback: If divider doesn't show, use borders */
+.mega-column:not(:last-child) {
+    border-right: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Third Column: Details */
+.mega-column.details {
+    flex: 1;
+    max-width: 45%;
+}
+
+/* Ensure links are aligned properly */
+.mega-column.details a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mega-column.details a:hover {
+    text-decoration: underline;
+}
+
+.fa-arrow-right {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mega-menu-list li:hover .fa-arrow-right {
+    transform: translateX(5px);
+}
+
+.description {
+    color: white;
+    font-size: 12px;
+    max-width: 400px;
+}
+
+/* Circular Arrow Button */
+.circle-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Reduced size */
+    height: 30px; /* Reduced size */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: white;
+    font-size: 14px; /* Adjusted font size */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.circle-arrow i {
+    font-size: 14px; /* Adjusted icon size */
+}
+
+.circle-arrow:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Mega Menu Details Content */
+#details-content {
+    color: white;
+    text-align: left;
+    padding: 20px;
+    background: #415f08(255, 255, 255, 0.1);
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+#details-content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#details-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+#details-content img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+    /* ========== Title Marquee & Scroll Animation Styles ========== */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white; /* Default text color */
+    text-align: left;
+    padding-left: 10%; /* 10% margin on the left */
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start; /* Align to top */
+    height: 100%;
+    width: 100%;
+}
+
+.hero-content h1, .hero-content p {
+    margin: 0;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: px;
+    margin-bottom: 20px; /* Adds margin below the heading */
+}
+
+.hero-content p {
+    font-size: 30px;
+    margin-top: 40px; /* Adds margin above the paragraph */
+}
+.more-button {
+    display: inline-block; /* Ensures it only takes the necessary space */
+    background-color: white; /* Adjust to match your theme */
+    color: #0D0D0D;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+    width: auto; /* Ensures it does not stretch */
+    text-align: center; /* Centers the text */
+    margin-top: 40px; /* Adds space between the button and the paragraph */
+}
+
+.more-button:hover {
+    background-color: #0D0D0D; /* Darker shade on hover */
+    color: white;
+}
+
+
+.eco-africa-container {
+    width: 100vw; /* Ensures it spans the full width */
+    background-color:  #df8e15
+     ;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center; /* Centers the content */
+    align-items: center;
+}
+
+
+.eco-africa-content {
+    max-width: 900px; /* Controls text width */
+    text-align: left; /* Aligns text */
+    color: black; /* Black text */
+    padding: 20px;
+    margin-left: 0px; /* Adjust this value to shift content left/right */
+}
+
+.eco-africa-content h2 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.eco-africa-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.learn-more-btn:hover {
+    background-color: #e0e0e0; /* Light gray hover effect */
+}
+
+
+/* Full-width section */
+.leadership-section {
+    width: 100%;
+    background-color: #FAF3E0; /* Off-white background */
+    padding: 60px 20px;
+}
+
+/* Flex container for heading and paragraph */
+.leadership-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    flex-wrap: wrap;
+}
+
+/* Heading on the left */
+.leadership-header h2 {
+    flex: 1;
+    font-size: 32px;
+    font-weight: bold;
+    color: #0f0202; /* Dark brown */
+    text-align: left;
+}
+
+/* Paragraph on the right */
+.leadership-header p {
+    flex: 1;
+    font-size: 18px;
+    color: #333; /* Dark text for readability */
+    text-align: right;
+}
+
+/* Cards container */
+.leadership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* General card styling */
+.card {
+    flex: 1;
+    min-width: 200px;   /* Set custom minimum width */
+    max-width: 450px;   /* Set custom maximum width */
+    height: 250px;      /* Set custom height */
+    padding: 30px;      /* Adjust padding to fit the content inside the card */
+    color: white;
+    position: relative;
+    text-align: left;
+    border-radius: 30px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 90% 100%, 0% 100%);
+    overflow: hidden; /* Ensures the image stays within the card */
+    transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+/* First Card */
+.eco-academy {
+    background-color:   #415f08
+    ; /* Dark Green */
+}
+
+/* Second Card */
+.eco-ventures {
+    background-color: #415f08; /* Bright Green */
+}
+
+/* Arrow icon styling */
+.arrow-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2; /* Keep it above the other content */
+}
+
+/* Image inside the card (hidden initially) */
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure image covers the card area */
+    opacity: 0; /* Hide image initially */
+    transition: opacity 0.3s ease;
+    z-index: -1; /* Keeps image behind text content */
+}
+
+/* Heading styling for both cards */
+.card h3 {
+    position: relative;
+    z-index: 1; /* Ensure heading is visible */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarges the card on hover */
+}
+
+.card:hover .card-image {
+    opacity: 1; /* Show the image on hover */
+}
+
+.card:hover p { 
+    opacity: 0; /* Hide the paragraph text on hover */
+    pointer-events: none; /* Disable interactions with hidden content */
+}
+
+/* Ensure the heading is visible */
+.card:hover h3 {
+    z-index: 2; /* Keep heading above the image */
+    color: #0D0D0D
+    ;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .leadership-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .leadership-header h2,
+    .leadership-header p {
+        text-align: center;
+    }
+}
+
+
+.projects-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:  white; /* Mustard Orange */
+    padding: 70px; /* Increased padding to make section taller */
+    color: #415f08;
+    min-height: 600px; /* Slightly increased height */
+}
+.projects-text {
+    max-width: 50%;
+}
+.projects-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.projects-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.projects-text button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid white;
+    color: #415f08;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.projects-text button:hover {
+    background: black;
+    color: #D49139;
+}
+.projects-video {
+    width: 45%; /* Made the video container bigger */
+    height: 500px; /* Increased height */
+}
+.projects-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the full container */
+    border-radius: 90px;
+}
+@media (max-width: 768px) {
+    .projects-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px; /* Adjust padding for smaller screens */
+        min-height: auto;
+    }
+    .projects-text, .projects-video {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}
+ .custom-section {
+     display: flex;
+     align-items: center;
+             justify-content: space-between;
+            background-color: #df8e15; /* Golden Yellow */
+            padding: 50px;
+            border-radius: 20px;
+            margin: 50px;
+        }
+        .custom-video {
+            width: 50%;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .custom-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .custom-text {
+            width: 45%;
+            background-color: #df8e15; /* Dark Green */
+            padding: 40px;
+            border-radius: 20px;
+            color: black;
+        }
+        .custom-text h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .custom-text p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .custom-text button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: white;
+            border: none;
+            color: #124F1A;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        .custom-text button:hover {
+            background: #0D0D0D;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .custom-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+            .custom-video, .custom-text {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+
+
+      /* Overall section */
+.insights-section {
+    background: #415f08;
+    color: white;
+    padding: 60px 120px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text section (remains fixed) */
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 80px;
+}
+
+.insights-heading {
+    flex: 1;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+}
+
+.insights-text {
+    flex: 1;
+    font-size: 16px;
+    text-align: right;
+}
+
+/* Insights wrapper (holds the scrolling content) */
+.insights-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+}
+
+/* Insights container (holds all items) */
+.insights-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    gap: 40px;
+}
+
+/* Individual insight items */
+.insight-item {
+    flex: 0 0 48%;
+    display: none;
+    text-align: left;
+}
+
+.insight-item img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.read-report {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+/* Navigation buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.nav-buttons button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.nav-buttons button:hover {
+    background: white;
+    color: #4B006E;
+}
+ 
+/*About us */
+       .about-section {
+        display: flex;
+        align-items: center;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        background-color: white; /* White background */
+        padding: 50px; /* Padding to prevent edges from touching */
+        box-sizing: border-box;
+    }
+    
+    .about-image {
+        width: 60%; /* Increased width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .about-image img {
+        width: 95%; /* Slight margin inside container */
+        height: auto;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 20px; /* Rounded corners */
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow to create "on top" effect */
+    }
+    
+    .about-text {
+        width: 40%; /* Adjusted to balance the layout */
+        padding: 50px;
+        text-align: left;
+    }
+    
+    .about-text h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .about-text p {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    .about-text button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background-color: #D2993D; /* Mustard Orange */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.3s ease;
+    }
+    
+    .about-text button:hover {
+        background-color: #B8862D;
+    }
+    
+        /*footer*/
+
+        footer, .footer-bottom {
+            background: linear-gradient(90deg, #df8e15, #415f08);
+            color: black; 
+            padding: 150px 120px; /* Increased padding for a larger footer */
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            padding:  40px 50px; /* Increased bottom section padding */
+        }
+        
+        /* Adjust spacing between footer columns */
+        .footer-right {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            gap: 10px; /* More spacing between columns */
+            flex-wrap: wrap;
+        }
+.footer-left {
+    flex: 1;
+    min-width: 300px;
+}
+.footer-left h2 {
+    margin-bottom: 30px;
+    font-size: 22px;
+}
+
+.newsletter input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black; /* Updated to match text */
+    color: black;
+    padding: 5px;
+    margin-right: 10px;
+    width: 30%;
+}
+.newsletter input::placeholder {
+    color: black;
+}
+.newsletter button {
+    display: block;
+    margin-top: 10px; /* Ensures spacing below the terms container */
+    margin-bottom: 30px; /* Increases gap between button and "Get Involved" */
+}
+.newsletter button:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+.terms-container {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top-left */
+    gap: 5px; /* Adjusts spacing between checkbox and text */
+}
+
+.terms-container input[type="checkbox"] {
+    margin: 0; /* Removes default margin */
+    width: 16px; /* Standard checkbox size */
+    height: 16px;
+}
+.terms-label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Spacing between checkbox and text */
+    font-size: 12px;
+}
+.submit-button {
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.footer-right {
+    display: flex;
+    flex: 1;
+    justify-content: space-between; /* Reduces the space */
+    gap: 10px; /* Adds controlled spacing */
+    flex-wrap: wrap;
+}
+.footer-column {
+    min-width: 150px;
+}
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-column ul li a {
+    text-decoration: none;
+    color: black; /* Links updated */
+}
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+.social-icons a {
+    text-decoration: none;
+    color: black; /* Icons updated */
+    font-size: 20px;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px 50px; /* Adjusted padding */
+}
+/* Styling for footer links section */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Equal spacing between links */
+    margin-top: 20px;
+}
+.footer-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-right {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .top-links {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .search-box {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+}
+/* Slide-in Effect for All Sections */
+.section-slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.section-slide-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
